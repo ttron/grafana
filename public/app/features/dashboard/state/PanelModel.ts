@@ -170,6 +170,9 @@ export class PanelModel implements DataConfigSource, IPanelModel {
   repeatedByRow?: boolean;
   maxPerRow?: number;
   collapsed?: boolean;
+  sid?: number;
+  pid?: number;
+
 
   panels?: PanelModel[];
   declare targets: DataQuery[];

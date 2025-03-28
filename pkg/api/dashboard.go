@@ -397,6 +397,9 @@ func (hs *HTTPServer) postDashboard(c *contextmodel.ReqContext, cmd dashboards.S
 	cmd.UserID = userID
 
 	dash := cmd.GetDashboardModel()
+	// fmt.Println(dash.Data)
+	// hs.log.Info(fmt)
+
 	newDashboard := dash.ID == 0
 	if newDashboard {
 		limitReached, err := hs.QuotaService.QuotaReached(c, dashboards.QuotaTargetSrv)

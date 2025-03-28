@@ -62,6 +62,8 @@ export const AnnotationEditor2 = ({ annoVals, annoIdx, dismiss, timeZone, ...oth
       description,
       from: Math.round(annoVals.time[annoIdx]!),
       to: Math.round(annoVals.timeEnd?.[annoIdx] ?? annoVals.time[annoIdx]!),
+      sid:0,
+      pid:0
     });
   };
 

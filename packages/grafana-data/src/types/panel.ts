@@ -96,6 +96,12 @@ export interface PanelProps<T = any> {
   /** Current height of the panel in pixels */
   height: number;
 
+  /**CYY Standard Pair Id */
+  sid?: number;
+
+  /**CYY Private Pair Id */
+  pid?: number;
+
   /** Field options configuration. Controls how field values are displayed (e.g., units, min, max, decimals, thresholds) */
   fieldConfig: FieldConfigSource;
 
@@ -154,13 +160,13 @@ export type PanelTypeChangedHandler<TOptions = any> = (
 
 export type PanelOptionEditorsRegistry = Registry<PanelOptionsEditorItem>;
 
-export interface PanelOptionsEditorProps<TValue> extends StandardEditorProps<TValue> {}
+export interface PanelOptionsEditorProps<TValue> extends StandardEditorProps<TValue> { }
 
 export interface PanelOptionsEditorItem<TOptions = any, TValue = any, TSettings = any>
-  extends OptionsEditorItem<TOptions, TSettings, PanelOptionsEditorProps<TValue>, TValue> {}
+  extends OptionsEditorItem<TOptions, TSettings, PanelOptionsEditorProps<TValue>, TValue> { }
 
 export interface PanelOptionsEditorConfig<TOptions, TSettings = any, TValue = any>
-  extends OptionEditorConfig<TOptions, TSettings, TValue> {}
+  extends OptionEditorConfig<TOptions, TSettings, TValue> { }
 
 /**
  * @internal
@@ -358,7 +364,7 @@ export class VisualizationSuggestionsListAppender<TOptions, TFieldConfig> {
   constructor(
     private list: VisualizationSuggestion[],
     private defaults: VisualizationSuggestion<TOptions, TFieldConfig>
-  ) {}
+  ) { }
 
   append(overrides: Partial<VisualizationSuggestion<TOptions, TFieldConfig>>) {
     this.list.push(defaultsDeep(overrides, this.defaults));
