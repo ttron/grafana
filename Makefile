@@ -150,9 +150,13 @@ gen-feature-toggles:
 	fi
 
 .PHONY: gen-go
-gen-go:
+# gen-go:
+# 	@echo "generate go files"
+# 	$(GO) run ./pkg/build/wire/cmd/wire/main.go gen -tags $(WIRE_TAGS) ./pkg/server
+gen-go: $(WIRE)
 	@echo "generate go files"
-	$(GO) run ./pkg/build/wire/cmd/wire/main.go gen -tags $(WIRE_TAGS) ./pkg/server
+	$(WIRE) gen -tags $(WIRE_TAGS) ./pkg/server
+
 
 .PHONY: fix-cue
 fix-cue: $(CUE)

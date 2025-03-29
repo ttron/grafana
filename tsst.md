@@ -1,6 +1,10 @@
 # Build docker image
 
 ```bash
+# go install github.com/google/wire/cmd/wire@latest
+
+# wire gen -tags oss ./pkg/server ./pkg/cmd/grafana-cli/runner
+
 make build-docker-full
 docker images
 

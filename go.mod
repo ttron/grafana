@@ -1,6 +1,6 @@
 module github.com/grafana/grafana
 
-go 1.23.7
+go 1.22.2
 
 // Override docker/docker to avoid:
 // go: github.com/drone-runners/drone-runner-docker@v1.8.2 requires
@@ -17,6 +17,8 @@ replace github.com/prometheus/prometheus => github.com/prometheus/prometheus v0.
 
 // Update when github.com/deepmap/oapi-codegen/v2 is updated to support later versions.
 replace github.com/getkin/kin-openapi => github.com/getkin/kin-openapi v0.122.0
+
+replace nhooyr.io/websocket => github.com/coder/websocket v1.8.7
 
 require (
 	buf.build/gen/go/parca-dev/parca/bufbuild/connect-go v1.4.1-20221222094228-8b1d3d0f62e6.1 // @grafana/observability-traces-and-profiling
@@ -82,7 +84,7 @@ require (
 	github.com/google/go-github v17.0.0+incompatible // @grafana/grafana-release-guild
 	github.com/google/go-github/v45 v45.2.0 // @grafana/grafana-release-guild
 	github.com/google/uuid v1.6.0 // @grafana/grafana-backend-group
-	github.com/google/wire v0.5.0 // @grafana/grafana-backend-group
+	github.com/google/wire v0.6.0 // @grafana/grafana-backend-group
 	github.com/googleapis/gax-go/v2 v2.12.3 // @grafana/grafana-backend-group
 	github.com/gorilla/mux v1.8.1 // @grafana/grafana-backend-group
 	github.com/gorilla/websocket v1.5.0 // @grafana/grafana-app-platform-squad
@@ -448,7 +450,7 @@ require (
 	modernc.org/ccgo/v3 v3.16.13 // indirect
 	modernc.org/libc v1.22.4 // indirect
 	modernc.org/mathutil v1.5.0 // indirect
-	modernc.org/memory v1.5.0 // indirect
+	modernc.org/memory v1.5.0 // indirect; indirectwebs
 	modernc.org/opt v0.1.3 // indirect
 	modernc.org/sqlite v1.21.2 // indirect
 	modernc.org/strutil v1.1.3 // indirect

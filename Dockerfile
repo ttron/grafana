@@ -1,9 +1,9 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1.10
 
-ARG BASE_IMAGE=alpine:3.19.1
-ARG JS_IMAGE=node:20-alpine
+ARG BASE_IMAGE=alpine:3.21
+ARG JS_IMAGE=node:22-alpine
 ARG JS_PLATFORM=linux/amd64
-ARG GO_IMAGE=golang:1.23.7-alpine
+ARG GO_IMAGE=golang:1.22.2-alpine
 
 ARG GO_SRC=go-builder
 ARG JS_SRC=js-builder
